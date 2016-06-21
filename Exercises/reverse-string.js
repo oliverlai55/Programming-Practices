@@ -6,10 +6,29 @@
 // Input:"I Love Code"
 // Output:"edoC evoL I"
 
-function FirstReverse(str) {
+//Method 1
+FirstReverse(readline());
 
-  
-  return str;
+function FirstReverse(str){
+    var stringArray = [];
+    reverseArray = [];
+
+    stringArray = str.split("");
+
+    for(i=stringArray.length-1; i>=0; i--){
+      reverseArray.push(stringArray[i]);
+    }
+
+    str = reverseArray.join("");
+    return str
+}
+
+FirstReverse(readline());
+
+//Method 2
+function FirstReverse(str){
+    str = str.split("").reverse().join("");
+    return str
 }
 
 FirstReverse(readline());
