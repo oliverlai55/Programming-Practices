@@ -8,19 +8,26 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="input-group">
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            <input type="text" id="input-box" class="form-control" placeholder="Type Word" aria-label="Text input with dropdown button">
             <div class="input-group-btn">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Action
+              <button type="button" id="filter-btn" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Selection
               </button>
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
+                <a id="reverse-btn" class="dropdown-item" value="reverse" href="#" onClick="reverse()">Reverse</a>
+                <a id="uppercase-btn" class="dropdown-item" value="uppercase" href="#" onClick="uppercase()">Uppercase</a>
+                <a id="lowercase-btn" class="dropdown-item" value="lowercase" href="#" onClick="lowercase()">Lowercase</a>
+                <a id="remove-vowel-btn" class="dropdown-item" value="remove-vowels" href="#" onClick="removeVowel()">Remove Vowels</a>
+                <a id="replace-vowel-btn" class="dropdown-item" value="replace-vowels" href="#" onClick="replaceVowel()">Replace Vowels</a>
               </div>
             </div>
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button" onClick="changeTerm()">Go!</button>
+            </span>
+          </div>
+          <div id="output">
+
+
           </div>
         </div>
       </div>
@@ -29,5 +36,5 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-<script src="scripts.js"></scriptt>
+<script src="scripts.js"></script>
 </html>
