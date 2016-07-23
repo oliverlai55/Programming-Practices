@@ -55,9 +55,8 @@ Orange,Apple,Mango
 ### replace
 The replace() method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
 
-
-sort
-if sort() is called with no argument, then the array is sorted lexicographically, in dictionary order
+### sort
+If sort() is called with no argument, then the array is sorted lexicographically, in dictionary order
 	when each value is treated as a string.
 
 var letters = ['R', 'O', 'F', 'L'];
