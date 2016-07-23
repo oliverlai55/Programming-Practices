@@ -1,8 +1,15 @@
 ## Data Structure
-### split
+### split()
 The split() method is used to split a string into an array of substrings, and returns the new array.
 Tip: If an empty string ("") is used as the separator, the string is split between each character.
 
+### join()
+Join the elements of an array into a string:
+```Javascript
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var energy = fruits.join();
+Output: Banana,Orange,Apple,Mango
+```
 ### push
 The push() method adds new items to the end of an array, and returns the new length.
 ```javascript
