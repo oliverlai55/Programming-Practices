@@ -5,9 +5,12 @@ Tip: If an empty string ("") is used as the separator, the string is split betwe
 
 ### push
 The push() method adds new items to the end of an array, and returns the new length.
+```javascript
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.push("Kiwi");
-Banana,Orange,Apple,Mango,Kiwi
+console.log(fruits);
+Output: Banana,Orange,Apple,Mango,Kiwi
+```
 
 ### pop
 Remove the last element of an array:
@@ -43,6 +46,7 @@ fruits.shift();
 Orange,Apple,Mango
 
 ### replace
+The replace() method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
 
 
 sort
