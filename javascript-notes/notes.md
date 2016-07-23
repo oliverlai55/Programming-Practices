@@ -1,21 +1,22 @@
-split
+## Data Structure
+### split
 The split() method is used to split a string into an array of substrings, and returns the new array.
 Tip: If an empty string ("") is used as the separator, the string is split between each character.
 
-push
+### push
 The push() method adds new items to the end of an array, and returns the new length.
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.push("Kiwi");
 Banana,Orange,Apple,Mango,Kiwi
 
-pop
+### pop
 Remove the last element of an array:
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.pop();
 Banana,Orange,Apple
 
 
-splice
+### splice
 The splice() method adds/removes items to/from an array, and returns the removed item(s).
 
 array.splice(index,howmany,item1, ...,itemX)
@@ -29,19 +30,19 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.splice(2, 0, "Lemon", "Kiwi");
 Banana,Orange,Lemon,Kiwi,Apple,Mango
 
-unshift
+### unshift
 The unshift() method adds new items to the beginning of an array, and returns the new length
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.unshift("Lemon","Pineapple");
 Lemon,Pineapple,Banana,Orange,Apple,Mango
 
-shift
+### shift
 The shift() method removes the first item of an array, and returns that item.
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.shift();
 Orange,Apple,Mango
 
-replace
+### replace
 
 
 sort
@@ -57,21 +58,21 @@ produced ['F', 'L', 'O', 'R']
 3. if the function returns zero, leave a and b unchanged with respect to each other
 
 var numbers = [8,5];
-    
+
 numbers.sort(function(a, b)
 {
-    return a - b;	
+    return a - b;
 });
-    
+
 alert(numbers);    //produces [5,8]
 
 var numbers = [4,3,5,9];
-    
+
 numbers.sort(function(a, b)
 {
-    return b - a;	
+    return b - a;
 });
-    
+
 alert(numbers);    //produces [9,5,4,3]
 
 
