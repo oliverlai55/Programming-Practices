@@ -21,9 +21,11 @@ Output: Banana,Orange,Apple,Mango,Kiwi
 
 ### pop
 Remove the last element of an array:
+```javascript
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.pop();
-Banana,Orange,Apple
+Output: Banana,Orange,Apple
+```
 
 
 ### splice
@@ -36,9 +38,11 @@ to specify the position from the end of the array.
 howmany: Required, The number of items to be removed. If set to 0, no items will be removed
 item1,...,itemX: Optional, The new item(s) to be added to the array
 
+```JavaScript
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.splice(2, 0, "Lemon", "Kiwi");
-Banana,Orange,Lemon,Kiwi,Apple,Mango
+Output fruits: Banana,Orange,Lemon,Kiwi,Apple,Mango
+```
 
 ### unshift
 The unshift() method adds new items to the beginning of an array, and returns the new length
