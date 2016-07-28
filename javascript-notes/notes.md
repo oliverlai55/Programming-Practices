@@ -115,7 +115,7 @@ var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 ### every()
 Iterates each element of the array until the return of the function is `false` and iteration will stop
 ```javascript
-numbers.every(isEvent)
+numbers.every(isEven)
 ```
 
 ### some()
@@ -146,6 +146,21 @@ var evenNumbers = numbers.filter(isEven);
 evenNumbers = [2, 4, 6, 8, 10, 12, 14]
 //it returns all the elements that are multiples of 2
 ```
+
+### reduce()
+The reduce method receives a function with the following parameters:
+"previousValue", "currentValue", "index", "array"
+We can use this function to return a value that will be added to an accumulator, which will be returned after the reduce method stops executing.  We can sum up the values of the array.
+
+```javascript
+numbers.reduce(function(previous, current, index) {
+    return previous + current;
+});
+
+//output will be 120
+```
+
+
 ### Creating Multidimentional Arrays:
 ```javascript
 var matrix3x3x3 = [];
