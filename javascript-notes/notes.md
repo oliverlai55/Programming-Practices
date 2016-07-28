@@ -1,4 +1,4 @@
-## Data Structure
+# Data Structure
 ### split()
 The split() method is used to split a string into an array of substrings, and returns the new array.
 Tip: If an empty string ("") is used as the separator, the string is split between each character.
@@ -62,9 +62,19 @@ Orange,Apple,Mango
 ### replace()
 The replace() method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
 
-### sort
-If sort() is called with no argument, then the array is sorted lexicographically, in dictionary order
-	when each value is treated as a string.
+## Sorting Elements
+### reverse()
+Simply reversing the elements of the array
+
+### sort()
+If sort() is called with no argument, then the array is sorted lexicographically, in dictionary order when each value is treated as a string.
+
+```javascript
+numbers.sort(function(a,b) {
+    return a-b;
+});
+```
+This code will return a negative number if b is bigger than a, a positive number if a is bigger than b, and 0 if they are equal.  This means that if a negative value is returned, it implies that a is smaller than b, which is further used by the sort function to arrange the elements.
 
 var letters = ['R', 'O', 'F', 'L'];
 letters.sort()
