@@ -10,7 +10,7 @@ var fruits = ["Banana", "Orange", "Apple", "Mango"];
 var energy = fruits.join();
 Output: Banana,Orange,Apple,Mango
 ```
-### push
+### push()
 The push() method adds new items to the end of an array, and returns the new length.
 ```javascript
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -19,7 +19,7 @@ console.log(fruits);
 Output: Banana,Orange,Apple,Mango,Kiwi
 ```
 
-### pop
+### pop()
 Remove the last element of an array:
 ```javascript
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -27,8 +27,7 @@ fruits.pop();
 Output: Banana,Orange,Apple
 ```
 
-
-### splice
+### splice()
 The splice() method adds/removes items to/from an array, and returns the removed item(s).
 
 array.splice(index,howmany,item1, ...,itemX)
@@ -44,19 +43,23 @@ fruits.splice(2, 0, "Lemon", "Kiwi");
 Output fruits: Banana,Orange,Lemon,Kiwi,Apple,Mango
 ```
 
-### unshift
+### unshift()
 The unshift() method adds new items to the beginning of an array, and returns the new length
+```JavaScript
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.unshift("Lemon","Pineapple");
 Lemon,Pineapple,Banana,Orange,Apple,Mango
+```
 
-### shift
+### shift()
 The shift() method removes the first item of an array, and returns that item.
+```JavaScript
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 fruits.shift();
 Orange,Apple,Mango
+```
 
-### replace
+### replace()
 The replace() method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
 
 ### sort
@@ -88,6 +91,16 @@ numbers.sort(function(a, b)
 });
 
 alert(numbers);    //produces [9,5,4,3]
+
+### concat()
+Joins multiple arrays and return a copy of the joined arrays.
+```javascript
+var zero = 0;
+var positiveNumbers = [1,2,3];
+var negativeNumbers = [-3,-2,-1];
+var numbers = negativeNumbers.concat(zero, positiveNumbers);
+numbers = [-3,-2,-1,0,1,2,3]
+```
 
 ### Creating Multidimentional Arrays:
 ```javascript
