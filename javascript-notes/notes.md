@@ -123,6 +123,16 @@ Iterates each element of the array until the return of the function is `true` an
 ```javascript
 numbers.some(isEven);
 ```
+
+### forEach()
+It will iterate each element whether its true or not.
+```javascript
+numbers.forEach(function(x) {
+    console.log((x % 2 == 0));
+    //will log true or false in each element of the array
+});
+```
+
 ### Creating Multidimentional Arrays:
 ```javascript
 var matrix3x3x3 = [];
