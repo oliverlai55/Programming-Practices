@@ -132,7 +132,20 @@ numbers.forEach(function(x) {
     //will log true or false in each element of the array
 });
 ```
+### map()
+```javascript
+var myMap = numbers.map(isEven);
+```
+Stores result in a new array.
+the myMap array will be [false, true, false, true, false]..etc
 
+### filter()
+Returns a new array with elements that the function returned `true` as follows:
+```javascript
+var evenNumbers = numbers.filter(isEven);
+evenNumbers = [2, 4, 6, 8, 10, 12, 14]
+//it returns all the elements that are multiples of 2
+```
 ### Creating Multidimentional Arrays:
 ```javascript
 var matrix3x3x3 = [];
