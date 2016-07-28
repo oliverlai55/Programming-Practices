@@ -107,13 +107,22 @@ Example:
 ```javascript
 var isEven = function(x) {
     return (x % 2 == 0) ? true : false;
+    // or just return (x % 2 == 0)
 };
 
 var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 ```
 ### every()
-Iterates each element of the array until the return of the function is `false`
+Iterates each element of the array until the return of the function is `false` and iteration will stop
+```javascript
+numbers.every(isEvent)
+```
 
+### some()
+Iterates each element of the array until the return of the function is `true` and iteration will stop
+```javascript
+numbers.some(isEven);
+```
 ### Creating Multidimentional Arrays:
 ```javascript
 var matrix3x3x3 = [];
