@@ -92,6 +92,7 @@ numbers.sort(function(a, b)
 
 alert(numbers);    //produces [9,5,4,3]
 
+## Joining Multiple Arrays
 ### concat()
 Joins multiple arrays and return a copy of the joined arrays.
 ```javascript
@@ -101,6 +102,17 @@ var negativeNumbers = [-3,-2,-1];
 var numbers = negativeNumbers.concat(zero, positiveNumbers);
 numbers = [-3,-2,-1,0,1,2,3]
 ```
+## Iterator functions
+Example:
+```javascript
+var isEven = function(x) {
+    return (x % 2 == 0) ? true : false;
+};
+
+var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+```
+### every()
+Iterates each element of the array until the return of the function is `false`
 
 ### Creating Multidimentional Arrays:
 ```javascript
