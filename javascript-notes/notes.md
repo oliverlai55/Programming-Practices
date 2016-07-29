@@ -155,6 +155,16 @@ Output: ['Ana', 'John', 'ana', 'john'];
 This happens because JS compares each character according to its ASCII value,
 A: 65, J; 74; a:97, and j: 106
 
+## Searching
+### indexOf()
+Returns the index of the first element that matches the argument passed
+
+### lastIndexOf()
+Returns the index of the last element found that matches the argument passed
+
+### ES6 methods: find and findIndex
+Will research on This
+
 ## Joining Multiple Arrays
 ### concat()
 Joins multiple arrays and return a copy of the joined arrays.
@@ -223,6 +233,20 @@ numbers.reduce(function(previous, current, index) {
 //output will be 120
 ```
 
+## Outputting the array into a string
+### toString()
+### join()
+
+```javascript
+console.log(numbers.toString());
+Output: 1, 2, 3, 4, 5, 6, 7..etc
+
+var numberString = number.toString().join('')
+console.log(numberString);
+Output: 123456
+
+// if join('-'), then output will be 1-2-3-4-5-6..etc
+```
 
 ### Creating Multidimentional Arrays:
 ```javascript
