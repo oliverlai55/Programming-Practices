@@ -1,4 +1,5 @@
-# Data Structure
+# Data Structure: Manipulating Arrays
+
 ### split()
 The split() method is used to split a string into an array of substrings, and returns the new array.
 Tip: If an empty string ("") is used as the separator, the string is split between each character.
