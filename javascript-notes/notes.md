@@ -115,14 +115,18 @@ function comparePerson(a, b) {
 console.log(friends.sort(comparePerson));
 ```
 
+### Other Examples:
+```javascript
 var letters = ['R', 'O', 'F', 'L'];
 letters.sort()
 produced ['F', 'L', 'O', 'R']
+```
 
 1. if the function returns less than zero, sort a before b
 2. if the function returns greater than zero, sort b before a
 3. if the function returns zero, leave a and b unchanged with respect to each other
 
+```javascript
 var numbers = [8,5];
 
 numbers.sort(function(a, b)
@@ -140,6 +144,16 @@ numbers.sort(function(a, b)
 });
 
 alert(numbers);    //produces [9,5,4,3]
+```
+
+### Sorting strings:
+```javascript
+var names = ['Ana', 'ana', 'john', 'John'];
+console.log(names.sort());
+Output: ['Ana', 'John', 'ana', 'john'];
+```
+This happens because JS compares each character according to its ASCII value,
+A: 65, J; 74; a:97, and j: 106
 
 ## Joining Multiple Arrays
 ### concat()
