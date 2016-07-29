@@ -76,6 +76,45 @@ numbers.sort(function(a,b) {
 ```
 This code will return a negative number if b is bigger than a, a positive number if a is bigger than b, and 0 if they are equal.  This means that if a negative value is returned, it implies that a is smaller than b, which is further used by the sort function to arrange the elements.
 
+OR you can have another sort function outside
+
+```javascript
+function compare(a, b) {
+    if (a < b) {
+        return -1;
+    }
+    if (a > b) {
+        return 1;
+    }
+    //a must be equal to b
+    return 0;
+}
+
+numbers.sort(compare);
+```
+
+### Custom Sorting
+Sorting objects:
+```javascript
+var friends = [
+    {name: 'John', age: 30},
+    {name: 'Ana', age: 20},
+    {name: 'Chris', age: 25}
+];
+
+function comparePerson(a, b) {
+    if (a.age < b.age) {
+        return -1
+    }
+    if (a.age > b.age) {
+        return 1
+    }
+    return 0;
+}
+
+console.log(friends.sort(comparePerson));
+```
+
 var letters = ['R', 'O', 'F', 'L'];
 letters.sort()
 produced ['F', 'L', 'O', 'R']
