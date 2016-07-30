@@ -77,3 +77,95 @@ stack.print(); //outputs [5, 8]
 ```
 
 ### ES6 Syntax to create Stack class
+```javascript
+class Stack {
+  constructor () {
+    this.items = [];
+  }
+  push(element) {
+    this.items.push(element);
+  }
+}
+```
+Cons: The ES6 classes are prototype based, this approach doesn't allow to declare private properties(variables) or methods
+
+### ES6 classes with scoped Symbols
+ES6 has a new primitive type: Symbol. It is immutable
+```javascript
+let _items = Symbol();
+
+class Stack {
+  constructor() {
+    this[_items] = [];
+  }
+}
+```
+
+### ES6 classes with WeakMap
+WeakMap can store a key/value pair, where the key is an object and the value can be any data type.
+```javascript
+let Stack = (function(){
+  const items = new WeakMap();
+  class Stack {
+  constructor () {
+    items.set(this, []);
+  }
+
+  push(element) {
+    let s = items.get(this);
+    s.push(element);
+  }
+
+  pop() {
+    let s = items.get(this);
+    let r = s.pop();
+    return r;
+  }
+}
+return Stack;
+})();
+```
+### Convert Decimal to binary using stacks
+```javascript
+function divideBy2(decNumber) {
+  var remStack = new Stack(),
+  rem,
+  binaryString = '';
+
+  while(decNumber > 0) {
+    rem = Math.floor(decNumber % 2);
+    //Javascript does not distinguish between integers from floating points, so need Math.floor to obtain only the integer
+    remStack.push(rem);
+    decNumber = Math.floor(decNumber / 2);
+  }
+  while(!remStack.isEmpty()) {
+    binaryString += remStack.pop().toString();
+  }
+  // if there there are elements inside remStack, pop it, turn it to string, and
+  //it will go under binaryString
+
+  return binaryString;
+}
+```
+
+### The base converter algorithm
+```javascript
+function baseConverter(decNumber, base) {
+  var remStack = new Stack(),
+  rem,
+  baseString = '';
+  digits = "0123456789ABCDEF";
+
+  while(decNumber > 0){
+    rem = Math.floor(decNumber % base);
+    remStack.push(rem);
+    decNumber = Math.floor(decNumber / base);
+  }
+
+  while(!remStack.isEmpty()) {
+    baseString += digits[remStack.pop()];
+  }
+
+  return baseString;
+}
+```
