@@ -50,4 +50,10 @@ this.size = function() {
 this.print = function() {
   console.log(items.toString);
 }
+
+let queue = new Queue();
+
+queue.enqueue("John");
+queue.enqueue("Jack");
+queue.enqueue("Camila");
 ```
