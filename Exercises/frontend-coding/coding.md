@@ -32,21 +32,29 @@ add(2)(5);
 *Question: What value is returned from the following statement?*
 ```javascript
 "i'm a lasagna hog".split("").reverse().join("");
+It will be the same sentence but will start from the end of the string.
 ```
 
 *Question: What is the value of `window.foo`?*
 ```javascript
 ( window.foo || ( window.foo = "bar" ) );
+
+
 ```
 
 *Question: What is the outcome of the two alerts below?*
 ```javascript
 var foo = "Hello";
+
 (function() {
   var bar = " World";
   alert(foo + bar);
 })();
+
 alert(foo + bar);
+
+1. "Hello World"
+2. "bar is not defined"
 ```
 
 *Question: What is the value of `foo.length`?*
@@ -54,6 +62,8 @@ alert(foo + bar);
 var foo = [];
 foo.push(1);
 foo.push(2);
+
+.push is mutable, answer is 2
 ```
 
 *Question: What is the value of `foo.x`?*
