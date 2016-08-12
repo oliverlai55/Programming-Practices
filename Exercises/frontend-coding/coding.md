@@ -67,10 +67,12 @@ foo.push(2);
 ```
 
 *Question: What is the value of `foo.x`?*
+http://stackoverflow.com/questions/32342809/javascript-code-trick-whats-the-value-of-foo-x
 ```javascript
 var foo = {n: 1};
 var bar = foo;
 foo.x = foo = {n: 2};
+
 ```
 
 *Question: What does the following code print?*
@@ -80,4 +82,8 @@ setTimeout(function() {
   console.log('two');
 }, 0);
 console.log('three');
+
+'one'
+'three'
+'two'
 ```
