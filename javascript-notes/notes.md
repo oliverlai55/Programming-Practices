@@ -205,6 +205,20 @@ numbers.forEach(function(x) {
     console.log((x % 2 == 0));
     //will log true or false in each element of the array
 });
+
+var numberarr = [1,2,3,4,5,6];
+var array2 = [];
+
+// numberarr.forEach(function(number) {
+//   number = number * 2;
+//   array2.push(number);
+// });
+
+numberarr.forEach(number => {
+  number = number * 2;
+  array2.push(number);
+});
+
 ```
 ### map()
 ```javascript
