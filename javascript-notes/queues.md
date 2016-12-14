@@ -19,41 +19,100 @@ let items = [];
 - size(): Returns the number of elements the queue contains, like length property of array.
 
 ```javascript
-//enqueue()
-this.enqueue = function(element) {
-  items.push(element);
-};
-//adding new elements to the queue, only add new items to the end of queue;
 
-//dequeue
-this.dequeue = function() {
-  return items.shift();
-};
-// takes first element out
+function Queue() {
+  var items = [];
 
-// front()
-this.front = function() {
-  return items[0];
-};
+  this.enqueue = function(element) {
+    items.push(element);
+  };
+  //adding new elements to the queue, only add new items to the end of queue;
 
-// isEmpty()
-this.isEmpty = function() {
-  return items.length == 0;
+  //dequeue
+  this.dequeue = function() {
+    return items.shift();
+  };
+  // takes first element out
+
+  this.front = function() {
+    return items[0];
+  };
+
+  this.isEmpty = function() {
+    return items.length == 0;
+  }
+
+  this.size = function() {
+    return items.length;
+  }
+
+  this.print = function() {
+    console.log(items.toString);
+  }
 }
 
-// size()
-this.size = function() {
-  return items.length;
-}
 
-//print()
-this.print = function() {
-  console.log(items.toString);
-}
+
 
 let queue = new Queue();
 
 queue.enqueue("John");
 queue.enqueue("Jack");
 queue.enqueue("Camila");
+```
+
+### Priority Queue
+```javascript
+
+function PriorityQueue() {
+
+  var items = [];
+
+  function QueueElement (element, priority) {
+    this.element = element;
+    this.priority = priority;
+  }
+
+  this.enqueue = function(element, priority) {
+    var queueElement = new QueueElement(element, priority);
+
+    if (this.isEmpty()) {
+      items.push(queueElement);
+    } else {
+      var added = false;
+      for (var i=0; i<items.length; i++) {
+        if (queueElement.priority < items[i].priority) {
+          items.splice(i, 0, queueElement);
+          added = true;
+          break;
+        }
+      }
+      if (!added) {
+        items.push(QueueElement);
+      }
+    }
+  }
+}
+```
+
+### Hot Potato game
+```javascript
+function hotPotato(nameList, num) {
+  var queue = new Queue();
+
+  for (var i=0; i<nameList.length; i++) {
+    queue.enqueue(nameList[i]);
+  }
+
+  var eliminated = '';
+  while (queue.size() > 1) {
+    for (var i=0; i<num; i++) {
+      queue.enqueue(queue.dequeue());
+    }
+    eliminated = queue.dequeue();
+    console.log(eliminated + ' was eliminated');
+  }
+
+  return queue.dequeue();
+}
 ```
