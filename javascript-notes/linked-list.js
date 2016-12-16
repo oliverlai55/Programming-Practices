@@ -30,9 +30,41 @@ function LinkedList() {
 
     length++;
   };
-  
+
   this.insert = function(position, element) {};
-  this.removeAt = function(position) {};
+
+  this.removeAt = function(position) {
+
+    //check for out-of-bounds values
+    if (position > -1 && position < length) {
+
+      var current = head,
+        previous,
+        index = 0;
+
+      //removing first item
+      if (position === 0) {
+        head = current.next;
+      } else {
+
+          while (index++ < position) {
+
+            previous = current;
+            current = current.next;
+          }
+
+          //link previous with current's next: skip it to remove
+          previous.next = current.next;
+      }
+
+      length--;
+
+      return current.element;
+    } else {
+      return null;
+    }
+  };
+
   this.remove = function(element) {};
   this.indexOf = function(element) {};
   this.isEmpty = function() {};
