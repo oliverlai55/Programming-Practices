@@ -82,5 +82,15 @@ function Set() {
   }
 
   //Set difference, values in A but not in B
-  
+  this.difference = function(otherSet) {
+    var differenceSet = new Set();
+
+    var values = this.values();
+    for (var i=0; i<values.length; i++) {
+      if (!otherSet.has(values[i])) {
+        differenceSet.add(values[i]);
+      }
+    }
+    return differenceSet;
+  }
 };
