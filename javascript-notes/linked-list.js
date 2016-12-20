@@ -208,27 +208,27 @@ function DoublyLinkedList() {
 
       // removing first item
       if (position === 0) {
-        head = current.next;
+        head = current.next; //(1)
 
         //if there is only one item, update tail
-        if (length === 1) {
+        if (length === 1) { //(2)
           tail = null;
         } else {
-          head.prev = null;
+          head.prev = null; //(3)
         }
-      } else if (position === length-1) {
+      } else if (position === length-1) { //last item
         current = tail;
         tail = current.prev;
         tail.next = null;
       } else {
 
-        while (index++ < position) {
+        while (index++ < position) { //(5)
           previous = current;
           current = current.next;
         }
 
         //link previous with current's next - skip it
-        previous.next = current.next;
+        previous.next = current.next; //(6)
         current.next.prev = previous;
       }
 
@@ -240,6 +240,4 @@ function DoublyLinkedList() {
       return null;
     }
   };
-
-  
 };
