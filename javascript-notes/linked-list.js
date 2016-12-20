@@ -155,7 +155,7 @@ function DoublyLinkedList() {
   var tail = null;
 
   this.insert = function(position, element) {
-
+ 
     //check for out of bounds values
     if (position >= 0 && position <= length) {
       var node = new Node(element),
