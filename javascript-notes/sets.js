@@ -50,4 +50,21 @@ function Set() {
     }
     return keys;
   }
+
+  //Union - given two sets, this returns a new set with elements from both given sets
+  this.union = function(otherSet) {
+    var unionSet = new Set();
+
+    var values = this.values();
+    for (var i=0; i<value.length; i++) {
+      unionSet.add(values[i]);
+    }
+
+    values = otherSet.values();
+    for (var i=0; i<values.length; i++) {
+      unionSet.add(values[i]);
+    }
+
+    return unionSet;
+  }
 };
