@@ -241,3 +241,7 @@ function DoublyLinkedList() {
     }
   };
 };
+
+
+//Circular Linked List
+// one reference direction
