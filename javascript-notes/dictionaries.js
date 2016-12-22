@@ -1,4 +1,4 @@
- 
+
 function Dictionary() {
   var items = {};
 
@@ -16,5 +16,9 @@ function Dictionary() {
       return true;
     }
     return false;
+  };
+
+  this.get = function(key) {
+    return this.has(key) ? items[key] : undefined;
   };
 }
