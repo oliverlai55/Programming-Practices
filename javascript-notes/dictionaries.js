@@ -21,4 +21,18 @@ function Dictionary() {
   this.get = function(key) {
     return this.has(key) ? items[key] : undefined;
   };
+
+  this.values = function() {
+    var values = [];
+    for (var k in items) {
+      if (this.has(k)) {
+        values.push(items[k]);
+      }
+    }
+    return values;
+  };
+
+  this.getItems = function() {
+    return items;
+  }
 }
