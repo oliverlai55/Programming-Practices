@@ -98,3 +98,5 @@ var ValuePair = function(key, value) {
     return false;
   }
 };
+
+//Linear Probing 
