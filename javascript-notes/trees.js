@@ -82,3 +82,35 @@ var postOrderTraverseNode = function(node, callback) {
     callback(node.key); //3
   }
 }
+
+
+//Search for Min
+this.min = function() {
+  return minNode(root); //1
+};
+
+var minNode = function(node) {
+  if (node) {
+    while (node && node.left !== null) { //2
+      node = node.left; //3
+    }
+    return node.key;
+  }
+  return null; //4
+};
+
+
+this.max = function() {
+  return maxNode(root);
+};
+
+var maxNode = function(node) {
+  if (node) {
+    while (node && node.right !== null) { //5
+      node = node.right;
+    }
+
+    return node.key;
+  }
+  return null;
+};
