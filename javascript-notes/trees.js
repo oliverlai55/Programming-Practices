@@ -114,3 +114,64 @@ var maxNode = function(node) {
   }
   return null;
 };
+
+
+//Search for specific value
+this.search = function(key) {
+  return searchNode(root, key); //1
+};
+
+var searchNode = function(node, key) {
+  if (node === null) { //2
+    return false;
+  }
+  if (key < node.key) { //3
+    return searchNode(node.left, key); //4
+  } else if (key > node.key) {//5
+    return searchNode(node.right, key); //6
+  } else {
+    return true; //7
+  }
+};
+
+//Remove a node
+this.remove = function(key) {
+  root = removeNode(root, key); //1
+};
+
+var removeNode = function(node, key) {
+  if (node === null) {//2
+    return null;
+  }
+  if (key < node.key) {//2
+     node.left = removeNode(node.left, key);//4
+     return node; //5
+
+  } else if (key > node.key) { //6
+     node.right = removeNode(node.right, key); //7
+     return node; //8
+  } else { //key is equal to node.key
+
+     //case 1 a leaf node
+     if (node.left === null && node.right === null) {//9
+        node = null; //10
+        return node; //11
+     }
+
+     //case 2 - a node with only 1 child
+     if (node.left === null) { //12
+        node = node.right; //13
+        return node; //14
+
+     } else if (node.right === null) {//15
+        node = node.left; //16
+        return node; //17
+     }
+
+     //case 3 a node with 2 children
+     var aux = findMinNode(node.right); //18
+     node.key = aux.key; //19
+     node.right = removeNode(node.right, aux.key); //20
+     return node; //21
+ }
+}
