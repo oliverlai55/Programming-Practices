@@ -55,3 +55,30 @@ function printNode(value) {//6
 }
 
 tree.inOrderTraverse(printNode); //7
+
+
+//Pre-order traversal
+this.preOrderTraverse = function(callback) {
+  preOrderTraverseNode(root, callback);
+};
+
+var preOrderTraverseNode = function(node, callback) {
+  if (node !== null) {
+    callback(node.key);
+    preOrderTraverseNode(node.left, callback);
+    preOrderTraverseNode(node.right, callback);
+  }
+};
+
+//Post-order traversal
+this.postOrderTraverse = function(callback) {
+  postOrderTraverse(root, callback);
+};
+
+var postOrderTraverseNode = function(node, callback) {
+  if (node !== null) {
+    postOrderTraverseNode(node.left, callback); //1
+    postOrderTraverseNode(node.right, callback); //2
+    callback(node.key); //3
+  }
+}
