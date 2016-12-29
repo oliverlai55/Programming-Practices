@@ -36,3 +36,22 @@ function BinarySearchTree() {
     };
   };
 }
+
+// In-order traversal
+this.inOrderTraverse = function(callback) {
+  inOrderTraverseNode(root, callback); //1
+};
+
+var inOrderTraverseNode = function(node, callback) {
+  if (node !== null) {//2
+    inOrderTraverseNode(node.left, callback)//3
+    callback(node.key); //4
+    inOrderTraverseNode(node.right, callback); //5
+  }
+}
+
+function printNode(value) {//6
+  console.log(value);
+}
+
+tree.inOrderTraverse(printNode); //7
