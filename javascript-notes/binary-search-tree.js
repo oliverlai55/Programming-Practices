@@ -7,6 +7,32 @@ BinarySearchTree.prototype = {
   //restore constructor
   constructor: BinarySearchTree,
 
+  traverse: function(process) {
+
+    //helper function
+    function inOrder(node) {
+      if (node) {
+
+        //traverse the left subtree
+        if (node.left !== null) {
+          inOrder(node.left);
+        }
+
+        //call the process method on this node
+        process.call(this, node);
+
+        //traverse the right subtree
+        if (node.right !== null) {
+          inOrder(node.right);
+        }
+      }
+    }
+
+    //start with the root
+    inOrder(this._root);
+  },
+  
+
   add: function (value) {
     // create a new item object, place data in
     var node = {
