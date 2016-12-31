@@ -31,7 +31,7 @@ BinarySearchTree.prototype = {
     //start with the root
     inOrder(this._root);
   },
-  
+
 
   add: function (value) {
     // create a new item object, place data in
@@ -111,7 +111,13 @@ BinarySearchTree.prototype = {
   },
 
   size: function() {
+    var length = 0;
 
+    this.traverse(function(node) {
+      length++;
+    });
+
+    return length
   },
 
   toArray: function() {
