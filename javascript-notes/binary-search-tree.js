@@ -121,10 +121,16 @@ BinarySearchTree.prototype = {
   },
 
   toArray: function() {
+    var result = [];
 
+    this.traverse(function(node) {
+      result.push(node.value);
+    });
+
+    return result;
   },
 
   toString: function() {
-
+    return this.toArray().toString();
   }
 };
