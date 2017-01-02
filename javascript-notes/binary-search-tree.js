@@ -194,6 +194,31 @@ BinarySearchTree.prototype = {
                             current.right : current.left);
           }
           break;
+
+        //two children
+        case 2:
+        //reset pointers for new traversla
+            replacement = current.left;
+            replacementParent = current;
+
+            //find the right-most node
+            while (replacement.right !== null) {
+              replacementParent = replacement;
+              replacement = replacement.right;
+            }
+
+            replacementParent.right = replacement.left;
+
+            //assign children to the replacement
+            replacement.right = current.right;
+            replacement.left = current.left
+
+            //place the replacement in the right spot
+            if (current.value < parent.value) {
+              parent.left = replacement;
+            } else {
+              parent.right = replacement;
+            }
         }
     }
   },
