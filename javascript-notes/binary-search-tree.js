@@ -180,6 +180,20 @@ BinarySearchTree.prototype = {
           break;
 
         //one child, just reassign to parent
+        case 1:
+          //if the current value is less than its
+          //parents, reset the left pointer
+          if (current.value < parent.value) {
+            parent.left = (current.left === null ?
+                           current.right : current.left);
+
+          //if the current value is greater than its
+          //parents reset the right pointer
+          } else {
+            parent.right = (current.left === null ?
+                            current.right : current.left);
+          }
+          break;
         }
     }
   },
