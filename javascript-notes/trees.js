@@ -133,7 +133,7 @@ var searchNode = function(node, key) {
     return true; //7
   }
 };
-
+ 
 //Remove a node
 this.remove = function(key) {
   root = removeNode(root, key); //1
