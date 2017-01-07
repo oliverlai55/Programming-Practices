@@ -1,4 +1,4 @@
-//Graph Class
+//Graph Class representing adjacency list
 
 function Graph() {
   var verticies = []; //1
