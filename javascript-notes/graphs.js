@@ -10,6 +10,11 @@ function Graph() {
     adjList.set(v, []); //4
   };
 
+  this.addEdge = function(v, w) {
+    adjList.get(v).push(w); //5
+    adjList.get(w).push(v); //6
+  }
+
   function Dictionary() {
     var items = {};
 
