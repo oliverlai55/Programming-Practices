@@ -15,6 +15,19 @@ function Graph() {
     adjList.get(w).push(v); //6
   }
 
+  this.toString = function() {
+    var s = '';
+    for (var i=0; i<vertices.length; i++) {//10
+      s += vertices[i] + ' -> ';
+      var neighbors = adjList.get(vertices[i]); //11
+      for (var j=0; j<neighbors.length; j++) { //12
+        s += neighbors[j] + ' ';
+      }
+      s += '\n'; //13
+    }
+    return s;
+  };
+
   function Dictionary() {
     var items = {};
 
