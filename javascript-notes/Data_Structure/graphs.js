@@ -126,3 +126,37 @@ graph.bfs(myVertices[0], printNode); //18
 
 
 //Improved BFS Method:
+
+this.BFS = function(v) {
+
+  var color = initializeColor(),
+      queue = new Queue(),
+      d = [], //1
+      pred = []; //2
+  queue.enqueue(v);
+
+  for (var i=0; i<vertices.length; i++) { //3
+    d[vertices[i]] = 0; //4
+    pred[vertices[i]] = null; //5
+  }
+
+  while (!queue.isEmpty()) {
+    var u = queue.dequeue(),
+        neighbors = adjList.get(u);
+    color[u] = 'grey';
+    for (i=0; i<neighbors.length; i++) {
+      var w = neighbors[i];
+      if (color[w] === 'white') {
+        color[w] = 'grey';
+        d[w] = d[u] + 1; //6
+        pred[w] = u; //7
+        queue.enqueue(w);
+      }
+    }
+    color[u] = 'black';
+  }
+  return { //8
+    distances: d,
+    predecessors: pred
+  };
+};
