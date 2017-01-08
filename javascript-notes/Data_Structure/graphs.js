@@ -83,3 +83,43 @@ graph.addEdge('D', 'H');
 graph.addEdge('B', 'E');
 graph.addEdge('B', 'F');
 graph.addEdge('E', 'I');
+
+
+// BFS Algorithm:
+var initializeColor = function() {
+  var color = [];
+  for (var i=0; i<vertices.length; i++) {
+    color[vertices[i]] = 'white'; //1
+  }
+  return color;
+};
+
+this.bfs = function(v, callback) {
+
+  var color = initializeColor(), //2
+      queue = new Queue(); //3
+  queue.enqueue(v); //4
+
+  while (!queue.isEmpty()) { //5
+    var u = queue.dequeue(), //6
+        neighbors = adjList.get(u); //7
+    color[u] = 'grey'; //8
+    for (var i=0; i<neighbors.length; i++) { //9
+      var w = neighbors[i]; //10
+      if (color[w] === 'white') { //11
+        color[w] = 'grey'; //12
+        queue.enqueue(w); //13
+      }
+    }
+    color[u] = 'black'; //14
+    if (callback) { //15
+      callback(u);
+    }
+  }
+};
+
+function printNode(value) { //16
+  console.log('Visited vertex: ' + value); //17
+}
+
+graph.bfs(myVertices[0], printNode); //18
