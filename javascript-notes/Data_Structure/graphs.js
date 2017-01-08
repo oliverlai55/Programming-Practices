@@ -85,7 +85,7 @@ graph.addEdge('B', 'F');
 graph.addEdge('E', 'I');
 
 
-// BFS Algorithm:
+// Breadth-first search BFS Algorithm:
 var initializeColor = function() {
   var color = [];
   for (var i=0; i<vertices.length; i++) {
@@ -123,3 +123,6 @@ function printNode(value) { //16
 }
 
 graph.bfs(myVertices[0], printNode); //18
+
+
+//Improved BFS Method:
