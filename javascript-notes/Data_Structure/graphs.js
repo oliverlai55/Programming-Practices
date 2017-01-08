@@ -131,8 +131,8 @@ this.BFS = function(v) {
 
   var color = initializeColor(),
       queue = new Queue(),
-      d = [], //1
-      pred = []; //2
+      d = [], //1  --the distance
+      pred = []; //2 --the predecessors
   queue.enqueue(v);
 
   for (var i=0; i<vertices.length; i++) { //3
@@ -160,3 +160,22 @@ this.BFS = function(v) {
     predecessors: pred
   };
 };
+
+
+var shortestPathA = graph.BFS(myVertices[0]);
+
+var fromVertex = myVertices[0]; //9
+for (var i=1; i<myVertices.length; i++) { //10
+  var toVertex = myVertices[i], //1
+      path = new Stack(); //12
+  for (var v=toVertex; v!==fromVertex;
+          v=shortestPathA.predecessors[v]) {//13
+      path.push(v); //14
+  }
+  path.push(fromVertex); //15
+  var s = path.pop(); //16
+  while (!path.isEmpty()) { //17
+    s += ' - ' + path.pop(); //18
+  }
+  console.log(s); //19
+}
