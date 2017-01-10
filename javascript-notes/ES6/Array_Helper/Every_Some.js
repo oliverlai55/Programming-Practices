@@ -50,7 +50,7 @@ function Field(value) {
 
 Field.prototype.validate = function() {
    return this.value.length > 0;
-};
+}; 
 
 var username = new Field("2cool");
 var password = new Field("my_password");
