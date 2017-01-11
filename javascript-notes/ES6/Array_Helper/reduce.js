@@ -24,3 +24,16 @@ primaryColors.reduce(function(previous, primaryColor) {
 
    return previous;
 }, []);
+
+//Example to use in Interview
+function balancedParens(string) {
+   //turning string into array
+   return !string.split('').reduce(function(previous, char) {
+      if (previous < 0) { return previous; }
+      if (char === "(") { return ++previous; }
+      if (char === ")") { return --previous; }
+      return previous;
+   }, 0);
+}
+
+balancedParens("(((")
