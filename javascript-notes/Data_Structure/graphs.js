@@ -218,3 +218,50 @@ var dfsVisit = function(u, color, callback) {
 
 
 // We can add more functionality
+//After the DFS algo traverses all vertices of G, it outputs
+// 2 arrays: discovery time and finish explorer time
+// The discovery time d[u] of u
+// The finish time f[u] when u is marked black
+// The predecessors p[u] of u
+
+var time = 0; //1
+this.DFS = function() {
+  var color = initializeColor(), //2
+    d = [],
+    f = [],
+    p = [];
+  time = 0;
+
+  for (var i=0; i<vertices.length; i++) { //3
+    f[vertices[i]] = 0;
+    d[vertices[i]] = 0;
+    p[vertices[i]] = null;
+  }
+  for (i=0; i<vertices.length; i++) {
+    if (color[vertices[i]] === 'white') {
+      DFSVisit(vertices[i], color, d, f, p);
+    }
+  }
+  return { //4
+    discovery: d,
+    finished: f,
+    predecessors: p
+  };
+};
+
+var DFSVisit = function(u, color, d, f, p) {
+  console.log('discovered ' + u);
+  color[u] = 'grey';
+  d[u] = ++time; //5
+  var neighbors = adjList.get(u);
+  for (var i=0; i<neighbors.length; i++) {
+    var w = neighbors[i];
+    if (color[w] === 'white') {
+      p[w] = u; //6
+      DFSVisit(w, color, d, f, p);
+    }
+  }
+  color[u] = 'black';
+  f[u] = ++time; //7
+  console.log('explored ' + u);
+};
