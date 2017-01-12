@@ -179,3 +179,42 @@ for (var i=1; i<myVertices.length; i++) { //10
   }
   console.log(s); //19
 }
+
+
+
+// Depth-first search (DFS)
+// Traverse depth then backtrack then follow next path
+
+//To visit vertex v:
+// Mark v as discovered (grey)
+// For all unvisited (white) neighbors w of v:
+  // Visit vertex w.
+// Mark v as exploreed (black)
+
+this.dfs = function(callback) {
+  var color = initializeColor(); //1
+
+  for (var i=0; i<vertices.length; i++) { //2
+    if (color[vertices[i]] = 'white') {//3
+      dfsVisit(vertices[i], color, callback); //4
+    }
+  }
+};
+
+var dfsVisit = function(u, color, callback) {
+  color[u] = 'grey'; //5
+  if (callback) { //6
+    callback(u);
+  }
+  var neighbors = adjList.get(u); //7
+  for (var i=0; i<neighbors.length; i++) { //8
+    var w = neighbors[i]; //9
+    if (color[w] === 'white') { //10
+      dfsVisit(w, color, callback); //11
+    }
+  }
+  color[u] = 'black'; //12
+};
+
+
+// We can add more functionality
