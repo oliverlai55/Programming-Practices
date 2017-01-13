@@ -51,8 +51,8 @@ var desks = [
 ];
 
 var deskTypes = desks.reduce(function(previous, desk) {
-    if (desk.type === 'sitting') { return ++previous.sitting; }
-    if (desk.type === 'standing') { return ++previous.standing; }
+    if (desk.type === 'sitting') { ++previous.sitting; }
+    if (desk.type === 'standing') { ++previous.standing; }
 
     return previous;
 }, { sitting: 0, standing: 0 });
