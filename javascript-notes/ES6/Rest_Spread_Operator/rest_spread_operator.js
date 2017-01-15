@@ -37,3 +37,13 @@ function validateShoppingList(...items) {
 }
 
 validateShoppingList('oranges', 'bread', 'eggs');
+
+
+const MathLibrary = {
+  calculateProduct(...rest) {
+    return this.multiply(...rest);
+  },
+  multiply(a, b) {
+    return a * b;
+  }
+};
