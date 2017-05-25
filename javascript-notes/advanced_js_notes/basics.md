@@ -7,7 +7,7 @@ use "use strict"
 - Can't delete arguments of functions
 - The ability to use eval for safely, will not print everything in console
 
-```javascript
+```javascript 
 "use strict"
 
 var theVal = 0;
