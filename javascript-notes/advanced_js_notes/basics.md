@@ -7,7 +7,7 @@ use "use strict"
 - Can't delete arguments of functions
 - The ability to use eval for safely, will not print everything in console
 
-```javascript 
+```javascript
 "use strict"
 
 var theVal = 0;
@@ -45,3 +45,36 @@ function foo(a) {
 foo(a);
 console.log(a);
 ```
+
+What are the different types in JS?
+
+Boolean
+Number
+String
+Null
+Undefined
+Object
+
+type of null is 'object'
+
+Dynamically vs Statically typed language?
+- the type changes dynamically without having to set prior to declaring the variable
+- Dynamic is faster, but could only run into problems when you run the program, during execution, a lot silent issues
+- Statically, during compilation, there will be errors, uncover problems early on.  Memory control can be more tightly controlled
+
+Null vs Undefined?
+```javascript
+var a;
+// Undefined, no value, uninitialized
+// used by JS engine to inform you that it is unknown property or undefined
+
+var a = null;
+// Programmer can set value of variable to null.  JS engine will NOT set null for you.
+
+
+```
+- null == undefined will be 'true'
+
+Difference between == and === ?
+- === checks for both types and value equality, == just value
+- type corercion, tries to change the type of value dynamically
