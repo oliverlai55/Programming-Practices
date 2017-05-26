@@ -70,11 +70,49 @@ var a;
 
 var a = null;
 // Programmer can set value of variable to null.  JS engine will NOT set null for you.
-
-
 ```
 - null == undefined will be 'true'
 
 Difference between == and === ?
 - === checks for both types and value equality, == just value
 - type corercion, tries to change the type of value dynamically
+
+What is NaN and how can we check for it?
+- typeof NaN is number
+
+```javascript
+NaN == 1
+// false
+
+NaN == false
+// false
+
+NaN == NaN
+// false
+
+isNaN(NaN)
+// true
+
+isNaN(1)
+// false
+
+isNaN('1')
+// false
+
+isNaN('A')
+//true
+
+isNaN('A')
+// trying to coerce to
+isNaN(Number('A'))
+// true
+
+var a = NaN
+a !== a;
+// true
+
+a = 1
+a !== a
+// false
+```
+- if a variable is not equal to itself, then that when it will be NaN
