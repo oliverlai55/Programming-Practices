@@ -9,9 +9,9 @@ use "use strict"
 
 ```javascript
 "use strict"
-     
-var theVal = 0;
 
+var theVal = 0;
+  
 thVal = 1
 
 if (theVal > 0) {
