@@ -11,14 +11,14 @@ use "use strict"
 "use strict"
 
 var theVal = 0;
-   
+
 thVal = 1
 
 if (theVal > 0) {
   console.log("hello");
 }
 ```
-
+ 
 Does JS pass by value or reference?
 Pass primitive types by value
 
