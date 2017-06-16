@@ -9,7 +9,7 @@ use "use strict"
 
 ```javascript
 "use strict"
-   
+    
 var theVal = 0;
 
 thVal = 1
