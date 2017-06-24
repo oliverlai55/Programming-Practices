@@ -71,7 +71,7 @@ var a;
 var a = null;
 // Programmer can set value of variable to null.  JS engine will NOT set null for you.
 ```
-- null == undefined will be 'true' 
+- null == undefined will be 'true'  
 
 Difference between == and === ?
 - === checks for both types and value equality, == just value
