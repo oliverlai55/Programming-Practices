@@ -62,7 +62,7 @@ Dynamically vs Statically typed language?
 - Dynamic is faster, but could only run into problems when you run the program, during execution, a lot silent issues
 - Statically, during compilation, there will be errors, uncover problems early on.  Memory control can be more tightly controlled
 
-Null vs Undefined?        
+Null vs Undefined? 
 ```javascript
 var a;
 // Undefined, no value, uninitialized
