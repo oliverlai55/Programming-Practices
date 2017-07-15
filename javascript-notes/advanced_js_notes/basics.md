@@ -44,7 +44,7 @@ function foo(a) {
 
 foo(a);
 console.log(a);
-```
+``` 
 
 What are the different types in JS?
 
@@ -63,7 +63,7 @@ Dynamically vs Statically typed language?
 - Statically, during compilation, there will be errors, uncover problems early on.  Memory control can be more tightly controlled
 
 Null vs Undefined?
-```javascript 
+```javascript
 var a;
 // Undefined, no value, uninitialized
 // used by JS engine to inform you that it is unknown property or undefined
