@@ -44,7 +44,7 @@ function foo(a) {
 
 foo(a);
 console.log(a);
-```          
+```           
 
 What are the different types in JS?
 
