@@ -3,4 +3,4 @@ and click a button to display the output in a second text field.
 Text transformation options for users:
 reverse the input, change to uppercase, change to lowercase, remove vowels,
 replace vowels with numbers
- 
+  
