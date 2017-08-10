@@ -16,7 +16,7 @@ class Toyota extends Car {
 
   honk() {
     return 'beep';
-  } 
+  }
 }
 
 const toyota = new Toyota({ color: 'red' });
