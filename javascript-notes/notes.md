@@ -5,7 +5,7 @@ The split() method is used to split a string into an array of substrings, and re
 Tip: If an empty string ("") is used as the separator, the string is split between each character.
 
 ### join()
-Join the elements of an array into a string:        
+Join the elements of an array into a string:         
 ```Javascript
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
 var energy = fruits.join();
