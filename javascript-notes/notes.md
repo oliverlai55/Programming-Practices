@@ -246,6 +246,20 @@ numbers.reduce(function(previous, current, index) {
 });
 
 //output will be 120
+
+const euros = [20.76, 41.85, 46.5];
+
+const sum = euros.reduce((total, amount) => total + amount);
+
+// Finding an Average
+const average = euros.reduce((total, amount, index, array) => {
+  total += amount;
+  if (index === array.length - 1) {
+    return total/array.length;
+  } else {
+    return total;
+  }
+});
 ```
 
 ## Outputting the array into a string
