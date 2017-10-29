@@ -246,6 +246,42 @@ numbers.reduce(function(previous, current, index) {
 });
 
 //output will be 120
+
+
+// additional source from https://medium.freecodecamp.org/reduce-f47a7da511a9
+const euros = [20.76, 41.85, 46.5];
+
+const sum = euros.reduce((total, amount) => total + amount);
+
+// Finding an Average
+const average = euros.reduce((total, amount, index, array) => {
+  total += amount;
+  if (index === array.length - 1) {
+    return total/array.length;
+  } else {
+    return total;
+  }
+});
+
+// Map and Filter as Reductions
+const average = euros.reduce((total, amount, index, array) => {
+  total + amount
+  return total/array.length
+}, 0);
+
+// Created new array where every amount is doubled
+const doubled = euros.reduce((total, amount) => {
+  total.push(amount * 2);
+  return total;
+}, []);
+
+// Filter out numbers we don't want to double
+const above30 = euro.reduce((total, amount) => {
+  if (amount > 30) {
+    total.push(amount);
+  }
+  return total;
+}, []);
 ```
 
 ## Outputting the array into a string
