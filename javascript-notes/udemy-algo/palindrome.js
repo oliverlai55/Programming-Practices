@@ -14,4 +14,4 @@ function isPalindrome(string) {
 
 console.log(isPalindrome("race car"));
 
-// A string is the same regardless of direction it is spelt
+// A string is the same regardless of direction it is spelt 
