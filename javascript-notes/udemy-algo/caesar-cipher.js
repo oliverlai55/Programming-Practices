@@ -22,5 +22,5 @@ function caesarCipher(str, num) {
 
   return newString;
 }
-
+ 
 caesarCipher('zoo keeper', 2);
