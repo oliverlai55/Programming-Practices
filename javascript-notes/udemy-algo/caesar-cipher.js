@@ -1,4 +1,4 @@
-function caesarCipher(str, num) { 
+function caesarCipher(str, num) {
   num = num % 26;
   var lowerCaseString = str.toLowerCase();
   var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -24,3 +24,4 @@ function caesarCipher(str, num) {
 }
 
 caesarCipher('zoo keeper', 2);
+// notes
