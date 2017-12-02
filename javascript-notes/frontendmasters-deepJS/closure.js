@@ -74,3 +74,10 @@ function foo() {
 }
 
 foo(); // 0 2
+
+// Example 6: Loops
+for (var i = 1; i <= 5; i++) {
+  setTimeout(function() {
+    console.log(('i: ' + i));
+  }, i*1000);
+}
