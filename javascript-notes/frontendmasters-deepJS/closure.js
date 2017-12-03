@@ -16,7 +16,7 @@ function bam(baz) {
 
 foo();
 
-// example 2
+// example 2 
 function foo() {
   var bar = "bar";
 
