@@ -1,7 +1,7 @@
 # Programming-Practices
 
 ## About
-This repo contains personal notes I've gathered throughout my coding experiences.  The notes are organized in different directories.  In addition, the Exercises directory contains practice questions.  I try to only use vanilla Javascript to complete these coding challenges.
+This repo contains personal notes I've gathered throughout my coding experiences.  The notes are a bit messy right now, organized in different directories.  In addition, the Exercises directory contains practice questions.  I try to only use vanilla Javascript to complete these coding challenges.
 
 ## Organization
 ### Exercises/
