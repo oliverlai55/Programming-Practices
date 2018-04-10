@@ -22,18 +22,26 @@ var partition = function(array, left, right) {
   var pivot = array[Math.floor((right + left) / 2)] // select middle item as pivot
   var i = left, j = right
 
-  while (i <= j) {
-    while (array[i] < pivot) {
+  while (i <= j) { // 11
+    while (array[i] < pivot) { // 12 Until we find an element that is greater than pivot, shift left pointer
       i++
     }
-    while (array[j] > pivot) {
+    while (array[j] > pivot) { // 13 until we find element with less than pivot
       j--;
     }
-    if (i <= j) {
-      swap(array, i, j);
+    if (i <= j) { // 14 compare whether the left pointer index is larger than the right pointer index.  Is left item greater than the right item??
+      swap(array, i, j); // 15 Swap both poiters, then repeat process 11
       i++;
       j--;
     }
   }
-  return 1;
+  return i; //  Return index of the left pointer that will be used to create the subarrays in line 3
+};
+
+var swap = function(array, index1, index2) {
+  var aux = array[index1];
+  array[index1] = array[index2];
+  array[index2] = aux;
+
+  [array[index1], array[index2]] = [array[index2], array[index2]];
 };
