@@ -61,28 +61,28 @@ function LinkedList() {
 
 	this.removeAt = function(position) {
 		//check for out-of-bounds values
-		if (position > -1 && position < length) {
-			let current = head,
-				previous,
-				index = 0;
+		if (position > -1 && position < length) {  // 1 checking if the position is a valid one
+			let current = head, // 2
+				previous, //3
+				index = 0; // 4
 
 			//removing first item
-			if (position === 0) {
+			if (position === 0) { // 5 Remove first element from list,
 				head = current.next;
 			} else {
-				while (index++ < position) {
-					previous = current;
-					current = current.next;
+				while (index++ < position) { // 6 If its removing last element, we iterate till the position
+					previous = current; // 7
+					current = current.next; // 8
 				}
-				//link previous with current's next: skip it to remove
-				previous.next = current.next;
+				//link previous with current's next: skip it to remove, will be lost in computer memory
+				previous.next = current.next; // 9
 			}
 
-			length--;
+			length--; // 10
 
 			return current.element;
 		} else {
-			return null;
+			return null; // 11
 		}
 	};
 
