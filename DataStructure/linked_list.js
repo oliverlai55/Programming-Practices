@@ -1,139 +1,127 @@
 // Linked list
 function LinkedList() {
+	let Node = function(element) {
+		// Node class represents the item we want to add to the list
+		this.element = element;
+		this.next = null;
+	};
 
-  let Node = function(element) { // Node class represents the item we want to add to the list
-    this.element = element;
-    this.next = null;
-  };
+	let length = 0;
+	let head = null; // reference for first node
 
-  let length = 0;
-  let head = null; // reference for first node
+	this.append = function(element) {
+		let node = new Node(element),
+			current;
 
-  this.append = function(element) {
-    let node = new Node(element),
-    current;
+		if (head === null) {
+			// first node on list
+			head = node;
+		} else {
+			current = head;
 
-    if (head === null) {
-      head = node;
-    } else {
-      current = head;
+			//loop the list until find last item
+			while (current.next) {
+				current = current.next;
+			}
 
-      //loop the list until find last item
-      while (current.next) {
-        current = current.next;
-      }
+			//get last item and assign next to node to make the link
+			current.next = node;
+		}
 
-      //get last item and assisn next to node to make the link
-      current.next = node;
-    }
+		length++;
+	};
 
-    length++;
-  };
+	this.insert = function(position, element) {
+		//check for out of bounds values
+		if (position >= 0 && position <= length) {
+			let node = new Node(element),
+				current = head,
+				previous,
+				index = 0;
 
-  this.insert = function(position, element) {
+			if (position === 0) {
+				node.next = current;
+				head = node;
+			} else {
+				while (index++ < position) {
+					previous = current;
+					current = current.next;
+				}
+				node.next = current;
+				previous.next = node;
+			}
 
-    //check for out of bounds values
-    if (position >= 0 && position <= length) {
-      let node = new Node(element),
-        current = head,
-        previous,
-        index = 0;
+			length++;
 
-      if (position === 0) {
+			return true;
+		} else {
+			return false;
+		}
+	};
 
-        node.next = current;
-        head = node;
-      } else {
-        while (index++ < position) {
-          previous = current;
-          current = current.next;
-        }
-        node.next = current;
-        previous.next = node;
-      }
+	this.removeAt = function(position) {
+		//check for out-of-bounds values
+		if (position > -1 && position < length) {
+			let current = head,
+				previous,
+				index = 0;
 
-      length++;
+			//removing first item
+			if (position === 0) {
+				head = current.next;
+			} else {
+				while (index++ < position) {
+					previous = current;
+					current = current.next;
+				}
+				//link previous with current's next: skip it to remove
+				previous.next = current.next;
+			}
 
-      return true;
+			length--;
 
-  } else {
-    return false;
-  }
-};
+			return current.element;
+		} else {
+			return null;
+		}
+	};
 
-  this.removeAt = function(position) {
+	this.remove = function(element) {
+		let index = this.indexOf(element);
+		return this.removeAt(index);
+	};
 
-    //check for out-of-bounds values
-    if (position > -1 && position < length) {
+	this.indexOf = function(element) {
+		let current = head,
+			index = -1;
 
-      let current = head,
-        previous,
-        index = 0;
+		while (current) {
+			if (element === current.element) {
+				return index;
+			}
+			index++;
+			current = current.next;
+		}
 
-      //removing first item
-      if (position === 0) {
-        head = current.next;
-      } else {
+		return -1;
+	};
 
-          while (index++ < position) {
+	this.isEmpty = function() {
+		return length === 0;
+	};
 
-            previous = current;
-            current = current.next;
-          }
+	this.size = function() {};
 
-          //link previous with current's next: skip it to remove
-          previous.next = current.next;
-      }
+	this.toString = function() {
+		let current = head,
+			string = '';
 
-      length--;
+		while (current) {
+			string = current.element;
+			current = current.next;
+		}
+		return string;
+	};
 
-      return current.element;
-    } else {
-      return null;
-    }
-  };
-
-  this.remove = function(element) {
-    let index = this.indexOf(element);
-    return this.removeAt(index);
-  };
-
-
-  this.indexOf = function(element) {
-
-    let current = head,
-        index = -1;
-
-    while (current) {
-      if (element === current.element) {
-        return index;
-      }
-      index++;
-      current = current.next;
-    }
-
-    return -1;
-  };
-
-  this.isEmpty = function() {
-    return length === 0;
-  };
-
-
-  this.size = function() {};
-
-  this.toString = function() {
-
-    let current = head,
-        string = '';
-
-    while (current) {
-      string = current.element;
-      current = current.next;
-    }
-    return string;
-  };
-
-  this.print = function() {};
-
+	this.print = function() {};
 }
