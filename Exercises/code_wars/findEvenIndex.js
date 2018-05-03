@@ -14,6 +14,8 @@ function findEvenIndex(arr) {
 
 	// 	if (!arr) return 0;
 
+	// maybe another function that JUST sum the array given?
+
 	let leftSum, rightSum, index;
 
 	leftSum = arr[0];
@@ -23,7 +25,12 @@ function findEvenIndex(arr) {
 		}) - leftSum;
 	console.log(leftSum, rightSum);
 
-	for (index = 0; index < arr.length - 1; index++) {
+	for (index = 1; index < arr.length; index++) {
+		if ((index = 1)) {
+			leftSum = 1;
+			rightSum = rightSum - arr[index];
+		}
+
 		if (leftSum == rightSum) {
 			return index;
 		}
@@ -39,7 +46,8 @@ function findEvenIndex(arr) {
 
 findEvenIndex([1, 2, 3, 4, 3, 2, 1]);
 // write down in pad the current state of  leftSum, rightSum and index;
-// i think after index, rightSum = rightSum - arr[index]
+// i think after index 0, rightSum = rightSum - arr[index]
+
 i = 0;
 leftSum = 1;
 rightSum = 15;
