@@ -39,7 +39,7 @@ function findEvenIndex(arr) {
 
 findEvenIndex([1, 2, 3, 4, 3, 2, 1]);
 // write down in pad the current state of  leftSum, rightSum and index;
-
+// i think after index, rightSum = rightSum - arr[index]
 i = 0;
 leftSum = 1;
 rightSum = 15;
