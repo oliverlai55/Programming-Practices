@@ -38,8 +38,8 @@ findEvenIndex([1, 2, 3, 4, 3, 2, 1]);
 // leftSum = calculate current leftSum
 // rightSum = calculate current rightSum
 // index = current index in array
-// while loop or recursion??
-// Loop through array, leftsum = first index sum , rightSum = the rest of the array items' sum
+// for loop, while loop or recursion???
+// Loop through array. While index <= 1, leftsum = sum of first index , rightSum = the rest of the array items' sum
 // when leftSum = rightSum, return index
 // if array is empty, return 0
 // if everything else fails, return -1
