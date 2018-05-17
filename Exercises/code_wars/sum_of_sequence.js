@@ -13,6 +13,12 @@ const sequenceSum = (begin, end, step) => {
    return currentTotal;
  };
 
+
+ const sequenceSum = (begin, end, step) => {
+   // May the Force be with you
+   if (begin > end) return 0;
+   return begin + sequenceSum(begin + step, end, step);
+ };
 sequenceSum(2,2,2) === 2
 sequenceSum(2,6,2) === 12 // 2 + 4 + 6
 sequenceSum(1,5,1) === 15 // 1 + 2 + 3 + 4 + 5
